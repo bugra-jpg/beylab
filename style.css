@@ -1,0 +1,116 @@
+# beylab.com.tr — kişisel blog
+
+Derleme (build) gerektirmeyen, tamamen **ücretsiz** statik blog. GitHub Pages üzerinde barınır.
+Yeni yazı eklemek = `posts/` klasörüne bir `.md` dosyası koymak. Gerisi otomatik.
+
+---
+
+## Bölüm 1 — Siteyi ilk kez yayına alma (tek seferlik, ~15 dk)
+
+### 1) GitHub'da depo (repository) oluştur
+1. https://github.com/new adresine git.
+2. **Repository name**: `beylab` (ya da istediğin bir ad).
+3. **Public** seç (GitHub Pages ücretsiz katmanda public olmalı).
+4. "Create repository" de.
+
+### 2) Bu klasördeki dosyaları yükle
+En kolay yol, tarayıcıdan sürükle-bırak:
+1. Yeni deponun sayfasında **"uploading an existing file"** bağlantısına tıkla.
+2. Bu `beylab-site` klasörünün **içindeki** tüm dosya ve klasörleri (index.html, post.html, style.css, app.js, posts.json, CNAME, .nojekyll, `posts/`, `scripts/`, `.github/`) sürükleyip bırak.
+   - Not: `.github` ve `.nojekyll` gibi noktayla başlayan dosyaların da yüklendiğinden emin ol.
+3. Aşağıda **"Commit changes"** de.
+
+### 3) GitHub Pages'i aç
+1. Depoda **Settings → Pages**.
+2. **Build and deployment → Source** kısmında **"GitHub Actions"** seç.
+3. Birkaç dakika içinde `.github/workflows/deploy.yml` çalışır ve siten yayınlanır.
+   İlerlemeyi **Actions** sekmesinden izleyebilirsin.
+
+Bu noktada siten şu adreste yayında olur:
+`https://KULLANICIADIN.github.io/beylab/`
+
+### 4) Kendi alan adını bağla (beylab.com.tr)
+Depoda `CNAME` dosyası zaten `beylab.com.tr` içeriyor. Şimdi DNS tarafını ayarla:
+
+**metunic.com (ya da DNS panelin) üzerinde şu kayıtları ekle:**
+
+Apex (kök) alan adı `beylab.com.tr` için 4 adet **A** kaydı:
+
+| Tip | Ad / Host | Değer |
+|-----|-----------|-------|
+| A | @ | 185.199.108.153 |
+| A | @ | 185.199.109.153 |
+| A | @ | 185.199.110.153 |
+| A | @ | 185.199.111.153 |
+
+`www` için 1 adet **CNAME** kaydı:
+
+| Tip | Ad / Host | Değer |
+|-----|-----------|-------|
+| CNAME | www | KULLANICIADIN.github.io |
+
+Sonra GitHub'da **Settings → Pages → Custom domain** kısmına `beylab.com.tr` yaz ve kaydet.
+DNS yayılması genelde birkaç dakika–birkaç saat sürer. Yayıldıktan sonra
+**"Enforce HTTPS"** kutusunu işaretle (ücretsiz SSL sertifikası otomatik gelir).
+
+---
+
+## Bölüm 2 — Yeni yazı ekleme (her seferinde, ~2 dk)
+
+1. GitHub'da deponda `posts/` klasörüne gir.
+2. Sağ üstte **"Add file → Create new file"**.
+3. Dosya adını şu biçimde ver: `YIL-AY-GUN-kisa-baslik.md`
+   Örnek: `2026-07-15-yapay-zeka-ve-fuzyon.md`
+   (Sadece İngiliz harfleri, rakam ve tire kullan; boşluk ve Türkçe karakter kullanma.)
+4. İçeriğin en üstüne şu bloğu koy (front matter), altına yazını yaz:
+
+```
+---
+title: Yazının görünen başlığı
+date: 2026-07-15
+excerpt: Ana sayfada görünecek 1-2 cümlelik özet.
+---
+
+Buradan itibaren yazını **Markdown** ile yaz.
+
+## Ara başlık
+
+Normal paragraf. **Kalın**, *italik*, [bağlantı](https://ornek.com).
+
+- madde
+- madde
+
+> alıntı
+```
+
+5. Aşağıda **"Commit changes"** de.
+6. Bitti! 1–2 dakika içinde yazı otomatik olarak ana sayfada belirir.
+   (`posts.json` listesi GitHub Actions tarafından kendiliğinden güncellenir — sen dokunmazsın.)
+
+### Yazıyı düzenlemek / silmek
+- Düzenle: `posts/` içindeki dosyayı aç → kalem ikonu → düzenle → commit.
+- Sil: dosyayı aç → çöp kutusu ikonu → commit.
+
+---
+
+## Markdown kısa hatırlatma
+- `# Başlık`, `## Alt başlık`
+- `**kalın**`, `*italik*`
+- `[yazı](https://link)`
+- Liste: satır başına `- ` veya `1. `
+- Alıntı: `> ...`
+- Kod: `` `kod` `` veya üç ters tırnakla blok
+- Yatay çizgi: `---`
+
+## Dosya yapısı
+```
+index.html        Ana sayfa (yazı listesi)
+post.html         Tekil yazı görünümü
+style.css         Tasarım
+app.js            Blog motoru (markdown'ı tarayıcıda render eder)
+posts.json        Yazı listesi (otomatik üretilir)
+posts/            Tüm yazılar (.md dosyaları) — sen buraya yazarsın
+scripts/          posts.json'u üreten script
+.github/          Otomatik yayın ayarı
+CNAME             Alan adı (beylab.com.tr)
+```
