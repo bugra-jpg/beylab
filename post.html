@@ -3,40 +3,29 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>beylab — füzyon, gelecek ve teoriler</title>
-  <meta name="description" content="Füzyon araştırmaları, dünya politiği, gelecek ve bunlara dair teoriler üzerine kişisel yazılar.">
-  <meta property="og:title" content="beylab">
-  <meta property="og:description" content="Füzyon araştırmaları, dünya politiği, gelecek ve teoriler üzerine yazılar.">
-  <meta property="og:type" content="website">
+  <title>beylab</title>
   <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
 </head>
 <body>
   <header class="site-header">
     <div class="wrap">
       <h1 class="brand"><a href="index.html">beylab<span class="dot">.</span></a></h1>
       <p class="tagline">Füzyon araştırmaları · dünya politiği · gelecek · teoriler</p>
-      <nav class="nav">
-        <a href="index.html">Yazılar</a>
-        <a href="#hakkinda">Hakkında</a>
-      </nav>
     </div>
   </header>
 
   <main class="wrap">
-    <ul class="post-list" id="post-list">
-      <li class="state">Yazılar yükleniyor…</li>
-    </ul>
-    <section id="hakkinda" style="padding:30px 0 10px; color:var(--muted);">
-      <h2 style="color:var(--text); font-size:22px;">Hakkında</h2>
-      <p>Burada füzyon enerjisi, jeopolitik, geleceğe dair senaryolar ve kendi teorilerim üzerine yazıyorum. Ara ara güncellenir.</p>
-    </section>
+    <article class="article" id="article">
+      <div class="state">Yazı yükleniyor…</div>
+    </article>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">© <span id="year"></span> beylab.com.tr · tüm yazılar yazara aittir</div>
+    <div class="wrap">© <span id="year"></span> beylab.com.tr</div>
   </footer>
 
   <script src="app.js"></script>
-  <script>renderIndex();</script>
+  <script>renderPost();</script>
 </body>
 </html>
