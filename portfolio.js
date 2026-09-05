@@ -1,0 +1,11 @@
+(function(){
+  const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const button=document.querySelector('.menu-button'),menu=document.querySelector('.mobile-menu');
+  if(button&&menu){button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));button.querySelector('span').textContent=open?'−':'+';menu.hidden=!open;});menu.addEventListener('click',e=>{if(e.target.closest('a')){menu.hidden=true;button.setAttribute('aria-expanded','false');button.querySelector('span').textContent='+';}});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){menu.hidden=true;button.setAttribute('aria-expanded','false');button.querySelector('span').textContent='+';button.focus();}});}
+  if(!reduce.matches&&'IntersectionObserver' in window){document.documentElement.classList.add('motion-ready');const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}}),{threshold:.13});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));}
+  const story=document.querySelector('.story'),chapters=[...document.querySelectorAll('.story-chapter')],num=document.getElementById('story-number'),progress=document.querySelector('.story-progress span'),lab=document.querySelector('.lab-section');
+  let pending=false;
+  function update(){pending=false;if(story&&!reduce.matches){const r=story.getBoundingClientRect(),p=Math.max(0,Math.min(1,-r.top/(r.height-innerHeight))),index=Math.min(chapters.length-1,Math.floor(p*chapters.length));chapters.forEach((el,i)=>{el.classList.toggle('active',i===index);el.inert=i!==index;el.setAttribute('aria-hidden',String(i!==index));});num.textContent=String(index+1).padStart(2,'0');progress.style.transform='scaleX('+Math.max(.04,p)+')';}if(lab&&!reduce.matches){lab.style.setProperty('--lab-offset',Math.max(-80,Math.min(80,lab.getBoundingClientRect().top*.13))+'px');}}
+  window.addEventListener('scroll',()=>{if(!pending){requestAnimationFrame(update);pending=true;}},{passive:true});window.addEventListener('resize',update);reduce.addEventListener('change',()=>location.reload());update();
+})();
