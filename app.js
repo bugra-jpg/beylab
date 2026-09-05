@@ -76,7 +76,7 @@ function renderPost() {
       document.title = title + " — beylab";
       marked.setOptions({ breaks: false, gfm: true });
       el.innerHTML =
-        '<a class="back" href="index.html">← Tüm yazılar</a>' +
+        '<a class="back" href="notes.html">← Tüm yazılar</a>' +
         '<h1>' + escapeHtml(title) + '</h1>' +
         '<div class="meta">' + formatDate(date) + '</div>' +
         '<div class="content">' + marked.parse(parsed.body) + '</div>';

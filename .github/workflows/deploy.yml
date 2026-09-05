@@ -24,8 +24,8 @@ jobs:
       - name: Depoyu çek
         uses: actions/checkout@v4
 
-      - name: Yazı listesini (posts.json) üret
-        run: python3 scripts/generate_index.py
+      - name: Statik siteyi hazırla
+        run: python3 scripts/build_site.py
 
       - name: Sayfa yapısını hazırla
         uses: actions/configure-pages@v5
@@ -33,7 +33,7 @@ jobs:
       - name: Dosyaları paketle
         uses: actions/upload-pages-artifact@v3
         with:
-          path: "."
+          path: "dist"
 
       - name: GitHub Pages'e yayınla
         id: deployment
