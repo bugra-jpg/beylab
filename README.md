@@ -29,3 +29,7 @@ The biography draws on the supplied CV, LinkedIn screenshots, and the user's own
 4. Build the Wendelstein 7-X model and move the current tokamak into the same public static collection, removing the need for ChatGPT sign-in.
 
 Do not change production DNS until the separate lab deployment is available. The METUnic domain registration can remain in place.
+
+## FMO article
+
+The illustrated FMO article is available at `post.html?p=2026-09-07-fmo-kompleksi`. Its original nine illustrations retain their composition and shaped edges, with the page background matched to the journal. The original six-page PDF is available unchanged under `assets/fmo/`. The article preserves the original claims and voice; this update makes typographic corrections and adds reading headings, not a scientific revision. The date labels the web publication. Homepage navigation is reserved for the next change.
