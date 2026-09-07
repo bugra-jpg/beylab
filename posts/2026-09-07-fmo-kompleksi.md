@@ -1,5 +1,5 @@
 ---
-title: Doğanın kuantum süperiletkeni: Fenna-Matthews-Olson kompleksi enerjiyi nasıl kusursuz taşıyor?
+title: Doğanın kuantum süperiletkeni  Fenna-Matthews-Olson kompleksi enerjiyi nasıl kusursuz taşıyor?
 date: 2026-09-07
 excerpt: Karanlıkta bir labirentin çıkışını bulmak… Yeşil sülfür bakterilerinden kuantum dünyasına, FMO kompleksinin enerji yolculuğu.
 author: Buğra Eren Yazıcı
