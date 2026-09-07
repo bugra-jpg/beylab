@@ -74,11 +74,19 @@ function renderPost() {
       var title = parsed.meta.title || slug;
       var date = parsed.meta.date || "";
       document.title = title + " — beylab";
+      var description = document.querySelector('meta[name="description"]');
+      if (description && parsed.meta.excerpt) description.content = parsed.meta.excerpt;
+      var pdf = parsed.meta.pdf || "";
+      var hasPdf = /^assets\/[a-zA-Z0-9/_-]+\.pdf$/.test(pdf);
+      el.classList.toggle('illustrated-article', hasPdf);
       marked.setOptions({ breaks: false, gfm: true });
       el.innerHTML =
         '<a class="back" href="notes.html">← Tüm yazılar</a>' +
+        (parsed.meta.category ? '<p class="article-category">' + escapeHtml(parsed.meta.category) + '</p>' : '') +
         '<h1>' + escapeHtml(title) + '</h1>' +
-        '<div class="meta">' + formatDate(date) + '</div>' +
+        '<div class="meta">' + (parsed.meta.author ? escapeHtml(parsed.meta.author) + ' · ' : '') + formatDate(date) +
+        (hasPdf ? ' · Web yayını' : '') + '</div>' +
+        (hasPdf ? '<a class="pdf-download" href="' + escapeHtml(pdf) + '" download>Özgün dergi yazısını indir <span>PDF · 6 sayfa ↓</span></a>' : '') +
         '<div class="content">' + marked.parse(parsed.body) + '</div>';
     })
     .catch(function (e) {
