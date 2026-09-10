@@ -12,7 +12,7 @@ pdf: assets/fmo/fmo-dergi-yazisi.pdf
 
 Bu soruların ilk bakışta ne kadar anlamsız ve mantık dışı göründüğünün farkındayım; ancak aslında sadece üç soruda size anlatacağım konuyu özetledim. Zaten kendisini yazmaya değer kılan da, tabiri caizse “ürpertici” yönüydü. Fakat asıl ilginç olan, bu soruların cevabının klasik fizik kurallarının ötesine geçip, kuantum dünyasının şaşırtıcı yasalarına dayanan mekanizmalarla açıklanabilmesi.
 
-<figure class="fmo-figure fmo-wave"><img src="assets/fmo/dalga.webp" alt="Kıvrılarak kırılan bir deniz dalgası; özgün yazının açılış görseli." width="1431" height="339" loading="lazy" decoding="async"></figure>
+<figure class="fmo-figure fmo-wave"><img src="assets/fmo/dalga-beylab.webp" alt="Karanlık bir yüzeyde mor ve beyaz ışıkla parlayan, plazmayı andıran deniz dalgası." width="1600" height="380" loading="lazy" decoding="async"></figure>
 
 Hazırsanız bugün Fenna-Matthews-Olson (FMO) kompleksi adı verilen, aslında hepimizin lise yıllarından aşina olduğu yeşil sülfür bakterisinin eşsiz yapısının ürünü olan yapıyı konuşacağız. Bu yapı, görünmez yolları ışık hızında ve neredeyse hatasız bulurken, kuantum etkilerinin doğrudan rol oynadığı, klasik sezgilerimizi altüst eden bir işleyiş sergiliyor. Gizemli bir labirentin kalbinde, görünmez yolları ışık hızında ve neredeyse hatasız bulan bu yapı, bilim insanlarını bugün dahi şaşkınlığa uğratıyor.
 
@@ -20,7 +20,7 @@ Hazırsanız bugün Fenna-Matthews-Olson (FMO) kompleksi adı verilen, aslında 
 
 Yolculuğumuza başlarken aslında öyle çok uzaklara gitmiyoruz; sözünü ettiğim bu “büyülü” yapıya ev sahipliği yapan yeşil sülfür bakterilerinin en sık rastlandığı yerlerden biri, ülkemizin kuzey kıyılarındaki Karadeniz. Derinliği kilometreleri aşan, derinlere indikçe adeta başka bir dünya ortaya çıkan bir denizden bahsediyoruz. Yüzeyde hayat alışıldık seyrinde devam ederken, yüzeyden derinlere indikçe ışık hızla azalıyor, suyun basıncı ise katbekat artıyor. Bu derinliklerde oksijen de hızla tükeniyor ve yerini sülfür bileşiklerine bırakıyor. Işığın yok denecek kadar az olduğu, yüksek basınç ve oksijen yoksunluğu ile sülfür zenginliğinin bir arada görüldüğü bu ortam, Karadeniz’in derinliklerindeki yaşamı baştan sona değiştiriyor; öyle ki burada karşılaştığımız canlılar ve ekosistemler, alıştığımız denizlerden çok farklı bir tablo sergiliyor.
 
-<figure class="fmo-figure fmo-medium"><img src="assets/fmo/deniz.webp" alt="Su yüzeyinden süzülen ışık ve denizaltı yaşamı." width="744" height="573" loading="lazy" decoding="async"></figure>
+<figure class="fmo-figure fmo-medium"><img src="assets/fmo/deniz-beylab.webp" alt="Karadeniz'in yüzeyinden derin ve karanlık su katmanlarına doğru azalan ışık." width="1200" height="920" loading="lazy" decoding="async"></figure>
 
 Takdir edersiniz ki böylesine zorlu koşullarda yaşamak her canlının harcı değil. İşte bu noktada canlılığın doğayla olan dansına şahit oluyoruz. Bu koşullarda var olabilmek için canlıların geliştirdiği adaptasyonlar aslında onların milyonlarca yıllık mücadelelerinin bir ürünü. Dolayısıyla doğada karşılaşabileceğimiz en kusursuz ve en işlevli yapılar olduklarını söylemek yanlış olmaz. Bugün inceleyeceğimiz yapı olan FMO kompleksleri de bu dansın fotosentez ayağında Karadeniz’in metrelerce derinliklerinde, karanlıkta, yüksek basınçta ve sülfürce zengin bir ortamda yaşayan yeşil sülfür bakterilerinin fotosentez yapabilmesine olanak tanıyor.
 
@@ -28,15 +28,15 @@ Takdir edersiniz ki böylesine zorlu koşullarda yaşamak her canlının harcı 
 
 FMO kompleksinin yapısını ve işlevini daha iyi anlayabilmek için görev aldığı fotosentez sürecine biraz değinmeliyiz. Bilindiği üzere fotosentez süreci prokaryot ve ökaryot canlılarda birbirinden farklı gerçekleşir. İnceleyeceğimiz yapı olan yeşil sülfür bakterisi prokaryot bir canlı olduğu için konuya girerken muhtemelen çoğumuzun aklındaki “kloroplastlı” fotosentez sürecini bir kenara bırakması gerekiyor. Bahsi geçen koşullar için fazla karmaşık olan bu sistemler yerine bakteriler üç elemandan oluşan, bana hep “çanak anteni” çağrıştıran bir sistem kullanıyorlar. Gelin öncelikle bu sisteme bir göz atalım.
 
-<figure class="fmo-figure fmo-band"><img src="assets/fmo/deniz-yasami.webp" alt="Deniz bitkileri ve süngerlerden oluşan özgün çizim." width="1787" height="595" loading="lazy" decoding="async"></figure>
+<figure class="fmo-figure fmo-band"><img src="assets/fmo/deniz-yasami-beylab.webp" alt="Bakteri filamentleri, sualtı bitkileri ve protein kıvrımlarını çağrıştıran mor organik biçimler." width="1800" height="600" loading="lazy" decoding="async"></figure>
 
-<figure class="fmo-figure "><img src="assets/fmo/fotosentez.webp" alt="Klorozomdan FMO proteinine ve Fotosistem I tipi reaksiyon merkezine uzanan enerji aktarımını gösteren özgün şema." width="1221" height="675" loading="lazy" decoding="async"></figure>
+<figure class="fmo-figure fmo-scientific"><div class="fmo-plate-head"><span>ŞEMA 01</span><span>ENERJİ AKTARIM YOLU</span></div><div class="fmo-plate-media"><img src="assets/fmo/fotosentez.webp" alt="Klorozomdan FMO proteinine ve Fotosistem I tipi reaksiyon merkezine uzanan enerji aktarımını gösteren özgün şema." width="1221" height="675" loading="lazy" decoding="async"></div><figcaption>Klorozomda toplanan ışık enerjisinin FMO proteini üzerinden Fotosistem I tipi reaksiyon merkezine aktarımı.</figcaption></figure>
 
 Benzetmemi biraz açmak istiyorum. Yukarıdaki görsele bakarsanız Klorozom yapısı sistemin çanağı, FMO kompleksi -biraz havada kalsa da- antenden alıcıya olan yolu, Fotosistem I ise alıcıyı temsil ediyor. Bu anlatıyı sistemlerin görevleri üzerine oluşturduğumdan ötürü Klorozom aynı çanağın radyo dalgalarını topladığı gibi ışığı topladığını, Fotosistem I’in ise toplanan bu radyo dalgalarını işleyen anten gibi ışığı işlediğini söylemek yanlış olmaz. Ancak bu sistemin bana kalırsa en “büyülü” yapısı olan FMO kompleksini bu anlatıya tam olarak uyarlayamadım. Çünkü öyle bir yapıya sahip ki, mevcut teknolojimiz ile ona benzer bir sistem henüz geliştiremedik. Ama illa somutlamak istersek bu yapıyı basitçe bir kabloya benzetebiliriz. Ancak ultra verimli bir kablo demek daha doğru olur. Öyle ki “çanağın” topladığı enerjiyi %99 gibi bir verimlilik oranıyla Fotosistem I’e iletebiliyor. Üstelik bu iletimi şartlar itibariyle gösterememesi gereken kuantum özellikleri göstererek sağlıyor.
 
 İyi de nasıl? Böylesine küçük ve basit bir hücre tüm bu kaosun ortasında nasıl oluyor da enerji iletimini bizden bile iyi yapıyor? Cevap aslında az önce bahsettiğim “kuantum özelliklerinden” geliyor.
 
-<figure class="fmo-figure fmo-band"><img src="assets/fmo/su-halkasi.webp" alt="Su damlasının oluşturduğu halkalar; özgün dalgalı kenar biçimiyle." width="1787" height="462" loading="lazy" decoding="async"></figure>
+<figure class="fmo-figure fmo-band"><img src="assets/fmo/su-halkasi-beylab.webp" alt="Karanlık bir su yüzeyinde mor ve beyaz ışıkla belirginleşen girişim halkaları." width="1800" height="465" loading="lazy" decoding="async"></figure>
 
 ## Süperpozisyon ve koherens
 
@@ -44,7 +44,7 @@ Kuantum fiziğine ilgisi olan herkes az çok “süperpozisyon” olayından hab
 
 Peki ya bu bakteriler nasıl oluyor da denizin derinlerinde, koherens şartlarına taban tabana zıt bir ortamda, koherense ortam sağlayabiliyorlar?
 
-<div class="fmo-pair"><figure class="fmo-figure "><img src="assets/fmo/fmo-a.webp" alt="Görsel a: FMO kompleksinin üçlü protein yapısı." width="609" height="531" loading="lazy" decoding="async"></figure><figure class="fmo-figure "><img src="assets/fmo/fmo-b.webp" alt="Görsel b: Numaralandırılmış bakteriyoklorofil pigmentleri." width="609" height="534" loading="lazy" decoding="async"></figure></div>
+<div class="fmo-pair"><figure class="fmo-figure fmo-scientific"><div class="fmo-plate-head"><span>GÖRSEL A</span><span>PROTEİN MİMARİSİ</span></div><div class="fmo-plate-media"><img src="assets/fmo/fmo-a.webp" alt="Görsel a: FMO kompleksinin üçlü protein yapısı." width="609" height="531" loading="lazy" decoding="async"></div><figcaption>FMO kompleksinin üç monomerden oluşan trimer yapısı.</figcaption></figure><figure class="fmo-figure fmo-scientific"><div class="fmo-plate-head"><span>GÖRSEL B</span><span>PİGMENT DİZİLİMİ</span></div><div class="fmo-plate-media"><img src="assets/fmo/fmo-b.webp" alt="Görsel b: Numaralandırılmış bakteriyoklorofil pigmentleri." width="609" height="534" loading="lazy" decoding="async"></div><figcaption>Enerji aktarımında rol alan numaralandırılmış bakteriyoklorofil pigmentleri.</figcaption></figure></div>
 
 2008 yılında Greg Engel ve ekibi tarafından keşfedilen bu etki o yıllarda bilim dünyasında büyük bir merak yarattı. Nasıl oluyor da ancak laboratuvar ortamında sağlanabilen bu etkiyi basit bir bakteri hem de denizlerin metrelerce derininde gerçekleştirebiliyordu? Cevap aslında bizlere çok şey öğreten farklı bir metottan geliyordu. Bükemediğin eli öpeceksin.
 
@@ -54,7 +54,7 @@ Evet gerçekten de öyle. Bu yapılar bizim o izole etmeye çalıştığımız �
 
 Basitçe bu proteinler pigmentler için aynı bir gimbal gibi görev yapıyor. Doğal durumlarında yaptıkları salınım hareketi iki pigmenti iletim için en ideal açı ve konumda tutuyor. Şimdi akıllara şu soru gelebilir. İyi de hani bu sistemler çevresel etkilere karşı durmuyordu? Onları iletimin bir parçası haline getiriyordu? Evet öyle. Proteinler her ne kadar pigmentleri en optimal konumda tutsa da aslında temelde bu konumlamayı başlatan da tıkandığı yerde düzelten de çevresel etkileşimlerdir.
 
-<figure class="fmo-figure fmo-medium"><img src="assets/fmo/labirent.webp" alt="Başlangıçtan bitişe çizilmiş bir yolu gösteren labirent." width="747" height="705" loading="lazy" decoding="async"></figure>
+<figure class="fmo-figure fmo-medium"><img src="assets/fmo/labirent-beylab.webp" alt="Birden çok mor ışık yolunun aynı anda ilerleyip tek bir çıkışta birleştiği karanlık labirent." width="1000" height="1000" loading="lazy" decoding="async"></figure>
 
 ## Bir labirentten çıkmak
 
@@ -64,7 +64,7 @@ Ancak bu noktada sakın proteinlerin ve çevresel etkilerin enerjiye “Şu yold
 
 Tabi anlatıya bu kadar kapılıp “Yoksa bu FMO çok mu zeki?” gibi düşünmenizin önüne geçeyim. Aslında sistem için bir karar verme süreci yok. Yani aktarılan enerji için FMO, yalnızca başı ve sonu olan bir sistem. Daha çözmeye başlamadan çözdükleri bir labirent. Bunu ise daha önce bahsettiğim etmenler sayesinde elde ettikleri kuantum süperpozisyona borçlular.
 
-<figure class="fmo-figure fmo-band"><img src="assets/fmo/isik-dalgasi.webp" alt="İç içe geçen altın renkli ışık dalgaları; özgün kıvrımlı kenarlarıyla." width="1787" height="342" loading="lazy" decoding="async"></figure>
+<figure class="fmo-figure fmo-band"><img src="assets/fmo/isik-dalgasi-beylab.webp" alt="Biyolojik yapılardan geçerek uyum içinde ilerleyen mor ve beyaz koherent ışık dalgaları." width="2000" height="382" loading="lazy" decoding="async"></figure>
 
 ## Doğadan geleceğe
 
