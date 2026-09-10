@@ -1,8 +1,8 @@
 (function(){
   const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
   document.getElementById('year').textContent=new Date().getFullYear();
-  const button=document.querySelector('.menu-button'),menu=document.querySelector('.mobile-menu');
-  if(button&&menu){button.addEventListener('click',()=>{const open=button.getAttribute('aria-expanded')!=='true';button.setAttribute('aria-expanded',String(open));button.querySelector('span').textContent=open?'−':'+';menu.hidden=!open;});menu.addEventListener('click',e=>{if(e.target.closest('a')){menu.hidden=true;button.setAttribute('aria-expanded','false');button.querySelector('span').textContent='+';}});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){menu.hidden=true;button.setAttribute('aria-expanded','false');button.querySelector('span').textContent='+';button.focus();}});}
+  const button=document.querySelector('.menu-button'),menu=document.querySelector('.mobile-menu'),mobileView=window.matchMedia('(max-width: 760px)');
+  if(button&&menu){const setMenu=open=>{button.setAttribute('aria-expanded',String(open));button.querySelector('span').textContent=open?'−':'+';menu.hidden=!open;};setMenu(mobileView.matches);button.addEventListener('click',()=>setMenu(button.getAttribute('aria-expanded')!=='true'));menu.addEventListener('click',e=>{if(e.target.closest('a'))setMenu(false);});document.addEventListener('keydown',e=>{if(e.key==='Escape'&&!menu.hidden){setMenu(false);button.focus();}});mobileView.addEventListener('change',e=>setMenu(e.matches));}
   if(!reduce.matches&&'IntersectionObserver' in window){document.documentElement.classList.add('motion-ready');const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in-view');io.unobserve(e.target);}}),{threshold:.13});document.querySelectorAll('.reveal').forEach(el=>io.observe(el));}
   const story=document.querySelector('.story'),chapters=[...document.querySelectorAll('.story-chapter')],num=document.getElementById('story-number'),progress=document.querySelector('.story-progress span'),lab=document.querySelector('.lab-section');
   let pending=false;

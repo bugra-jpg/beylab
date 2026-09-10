@@ -12,6 +12,23 @@
 .light-section .about-grid h2 span,.light-section .engagement-grid h2 em,.light-section .section-title>span{color:#4e608d}
 .light-section .about-copy>p,.light-section .project-description>p,.light-section .engagement-items p{color:#414b5f}
 .light-section .research-lead{color:#4d5970}
+
+/* Keep all five destinations visible across the desktop header. */
+.header{padding:0 0 0 5%}
+.header>.wordmark{flex:0 0 auto;padding-right:clamp(32px,5vw,88px)}
+.header-nav{align-self:stretch;margin-left:auto;width:min(78%,1050px);display:grid;grid-template-columns:repeat(5,minmax(0,1fr));border-left:1px solid var(--line)}
+.header-nav a{display:flex;align-items:center;justify-content:center;padding:0 clamp(12px,1.6vw,28px);border-right:1px solid var(--line);color:#bfc0c8;font-size:clamp(11px,.9vw,14px);text-align:center;white-space:nowrap;transition:color .2s ease,background-color .2s ease}
+.header-nav a:hover,.header-nav a:focus-visible{color:#fff;background:#718cff14}
+.menu-button{display:none}
+.mobile-menu,.mobile-menu:not([hidden]){display:none}
+
+@media(max-width:760px){
+  .header{padding:0 6%}
+  .header>.wordmark{padding-right:0}
+  .header .header-nav{display:none}
+  .menu-button{display:flex}
+  .mobile-menu:not([hidden]){display:flex;flex-direction:column;gap:22px}
+}
 .light-section .project-description .muted,.light-section .project-status,.light-section .project-number,.light-section .engagement-items article>span,.light-section .tags span{color:#536078}
 .light-section .tags span{border-color:#aeb7c8}
 .light-section .section-top .eyebrow,.light-section .section-side,.light-section .identity-line,.light-section .project-status,.light-section .engagement-items article>span{font-size:12px}
