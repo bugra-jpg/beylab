@@ -16,7 +16,7 @@
     dialog.showModal();
   }
 
-  fetch('photos.json')
+  fetch('photos.json?v='+Date.now(),{cache:'no-store'})
     .then(response=>{if(!response.ok)throw new Error('Gallery unavailable');return response.json();})
     .then(photos=>{
       count.textContent=photos.length?String(photos.length).padStart(2,'0')+' FRAME'+(photos.length===1?'':'S'):'NEW FRAMES SOON';
