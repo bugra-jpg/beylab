@@ -12,7 +12,7 @@
 .light-section .about-grid h2 span,.light-section .engagement-grid h2 em,.light-section .section-title>span{color:#4e608d}
 .light-section .about-copy>p,.light-section .project-description>p,.light-section .engagement-items p{color:#414b5f}
 .light-section .research-lead{color:#4d5970}/* Give all six destinations an equal share of the desktop header. */
-.header{padding:0 0 0 5%}.header>.wordmark{flex:0 0 clamp(180px,17vw,430px);padding-right:0}.header-nav{align-self:stretch;flex:1 1 auto;margin-left:0;width:auto;max-width:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));border-left:1px solid var(--line)}
+.header{padding:0 0 0 5%}.header>.wordmark{flex:0 0 clamp(180px,17vw,430px);padding-right:0}.header .header-nav{align-self:stretch;flex:1 1 auto;margin-left:0;width:auto;max-width:none;display:grid;grid-template-columns:repeat(6,minmax(0,1fr));gap:0;border-left:1px solid var(--line)}
 .header-nav a{display:flex;align-items:center;justify-content:center;padding:0 clamp(12px,1.6vw,28px);border-right:1px solid var(--line);color:#bfc0c8;font-size:clamp(11px,.9vw,14px);text-align:center;white-space:nowrap;transition:color .2s ease,background-color .2s ease}
 .header-nav a:hover,.header-nav a:focus-visible{color:#fff;background:#718cff14}
 .menu-button{display:none}
