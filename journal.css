@@ -259,6 +259,7 @@ a:focus-visible { outline: 2px solid #879cff; outline-offset: 5px; }
 @media (max-width: 650px) {
   .journal-header { height: 75px; padding: 0 7%; }
   .journal-header nav { gap: 15px; font-size: 12px; }
+  .journal-header nav a:first-child { display: none; }
   .journal-brand { font-size: 24px; }
   .journal-intro { padding-top: 60px; }
   .journal-intro h1 { font-size: 49px; letter-spacing: -2.5px; }

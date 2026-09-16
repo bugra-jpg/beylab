@@ -10,12 +10,17 @@ The scroll animation is an artistic plasma study, not an engineering model or ph
 - `notes.html`: Turkish writing page with one personal introduction.
 - `post.html?p=2026-09-05-kimim-ben`: the new personal introduction. The three previous posts are removed.
 - `lab.html`: model collection preview. The tokamak currently links to its owner-private Sites preview; Wendelstein 7-X is planned.
+- `photos.html`: photography gallery. Files uploaded to `assets/photos/` are indexed automatically during the GitHub Pages build.
 
 ## Run and build
 
 Use `python -m http.server 3010` for a local preview. Use `python scripts/build_site.py` to create `dist/`. The GitHub Pages workflow uploads only this public output. `CNAME` remains `beylab.com.tr`.
 
 The 3D library is vendored under `assets/vendor` with its MIT licence. Motion honours `prefers-reduced-motion`, pauses outside the opening section, and degrades to a readable page when WebGL is unavailable. The moving forms illustrate a research theme; they are not a magnetic equilibrium or material simulation.
+
+## Photography
+
+Upload JPG, JPEG, PNG, WebP, or AVIF files to `assets/photos/`. The deployment build creates `photos.json`, so image-only uploads appear automatically. Use date-prefixed filenames such as `2026-09-16-ankara-gecesi.jpg` for predictable newest-first ordering. Optional titles, locations, dates, and alt text live in `assets/photos/details.json`.
 
 ## Content
 
