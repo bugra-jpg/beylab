@@ -17,8 +17,13 @@
   <section class="photo-grid" id="photo-grid" aria-live="polite"></section>
   <section class="photo-empty" id="photo-empty" hidden><span>THE FIRST ROLL</span><h2>Photographs<br>are on their way.</h2><p>I’m choosing a few frames to begin this collection.</p></section>
   
-</main>
-<dialog class="photo-dialog" id="photo-dialog"><button class="photo-dialog-close" type="button" aria-label="Close photograph">Close ×</button><div class="photo-dialog-frame"><img alt=""><div><strong class="photo-dialog-title"></strong><span class="photo-dialog-meta"></span></div></div></dialog>
+</main><dialog class="photo-dialog" id="photo-dialog" aria-label="Photograph viewer">
+  <button class="photo-dialog-close" type="button" aria-label="Close photograph">Close ×</button>
+  <button class="photo-dialog-nav photo-dialog-prev" type="button" aria-label="Previous photograph">←</button>
+  <div class="photo-dialog-viewport"><img alt="" draggable="false"></div>
+  <button class="photo-dialog-nav photo-dialog-next" type="button" aria-label="Next photograph">→</button>
+  <div class="photo-dialog-info"><div><span class="photo-dialog-count"></span><strong class="photo-dialog-title"></strong><span class="photo-dialog-meta"></span></div><div class="photo-dialog-actions"><button class="photo-dialog-zoom" type="button">View 100%</button><a class="photo-dialog-original" href="#" target="_blank" rel="noreferrer">Open full size ↗</a></div></div>
+</dialog>
 <footer class="photo-footer"><a class="wordmark" href="./">beylab<span>.</span></a><p>© <span id="year">2026</span> Buğra Eren Yazıcı</p><a href="./">Back to portfolio ↑</a></footer>
 <script>document.getElementById('year').textContent=new Date().getFullYear();</script><script src="photos.js" defer></script>
 </body></html>
