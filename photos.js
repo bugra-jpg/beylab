@@ -6,19 +6,43 @@
   const dialogImage=dialog&&dialog.querySelector('img');
   const dialogTitle=dialog&&dialog.querySelector('.photo-dialog-title');
   const dialogMeta=dialog&&dialog.querySelector('.photo-dialog-meta');
+  const dialogCount=dialog&&dialog.querySelector('.photo-dialog-count');
+  const dialogViewport=dialog&&dialog.querySelector('.photo-dialog-viewport');
+  const dialogZoom=dialog&&dialog.querySelector('.photo-dialog-zoom');
+  const dialogOriginal=dialog&&dialog.querySelector('.photo-dialog-original');
+  let photos=[];
+  let currentIndex=0;
 
-  function openPhoto(photo){
+  function setZoomed(zoomed){
     if(!dialog)return;
+    dialog.classList.toggle('is-zoomed',zoomed);
+    dialogZoom.textContent=zoomed?'Fit screen':'View 100%';
+    if(!zoomed){dialogViewport.scrollTop=0;dialogViewport.scrollLeft=0;}
+  }
+
+  function showPhoto(index){
+    if(!dialog)return;
+    currentIndex=(index+photos.length)%photos.length;
+    const photo=photos[currentIndex];
+    setZoomed(false);
     dialogImage.src=photo.src;
     dialogImage.alt=photo.alt||photo.title;
     dialogTitle.textContent=photo.title;
     dialogMeta.textContent=[photo.location,photo.date].filter(Boolean).join(' · ');
-    dialog.showModal();
+    dialogCount.textContent=String(currentIndex+1).padStart(2,'0')+' / '+String(photos.length).padStart(2,'0');
+    dialogOriginal.href=photo.src;
+  }
+
+  function openPhoto(index){
+    if(!dialog)return;
+    showPhoto(index);
+    if(!dialog.open)dialog.showModal();
   }
 
   fetch('photos.json?v='+Date.now(),{cache:'no-store'})
     .then(response=>{if(!response.ok)throw new Error('Gallery unavailable');return response.json();})
-    .then(photos=>{
+    .then(items=>{
+      photos=items;
       count.textContent=photos.length?String(photos.length).padStart(2,'0')+' FRAME'+(photos.length===1?'':'S'):'NEW FRAMES SOON';
       if(!photos.length){empty.hidden=false;return;}
       const fragment=document.createDocumentFragment();
@@ -36,7 +60,7 @@
         const metaNode=button.querySelector('small');
         metaNode.textContent=meta;
         if(!meta)metaNode.hidden=true;
-        button.addEventListener('click',()=>openPhoto(photo));
+        button.addEventListener('click',()=>openPhoto(index));
         fragment.appendChild(button);
       });
       grid.appendChild(fragment);
@@ -45,6 +69,15 @@
 
   if(dialog){
     dialog.querySelector('.photo-dialog-close').addEventListener('click',()=>dialog.close());
+    dialog.querySelector('.photo-dialog-prev').addEventListener('click',()=>showPhoto(currentIndex-1));
+    dialog.querySelector('.photo-dialog-next').addEventListener('click',()=>showPhoto(currentIndex+1));
+    dialogZoom.addEventListener('click',()=>setZoomed(!dialog.classList.contains('is-zoomed')));
+    dialogImage.addEventListener('click',()=>setZoomed(!dialog.classList.contains('is-zoomed')));
+    dialog.addEventListener('keydown',event=>{
+      if(event.key==='ArrowLeft'){event.preventDefault();showPhoto(currentIndex-1);}
+      if(event.key==='ArrowRight'){event.preventDefault();showPhoto(currentIndex+1);}
+    });
     dialog.addEventListener('click',event=>{if(event.target===dialog)dialog.close();});
+    dialog.addEventListener('close',()=>setZoomed(false));
   }
 })();
