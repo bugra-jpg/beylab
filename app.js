@@ -67,12 +67,29 @@ function renderPost() {
     el.innerHTML = '<div class="state">Yazı bulunamadı. <a href="index.html">Ana sayfaya dön</a></div>';
     return;
   }
+  var isEnglishFmo = slug === "2026-09-07-fmo-kompleksi";
+  if (isEnglishFmo) {
+    document.documentElement.lang = "en";
+    var nav = document.querySelector(".journal-header nav");
+    if (nav) {
+      nav.setAttribute("aria-label", "Main menu");
+      var links = nav.querySelectorAll("a");
+      if (links.length === 3) {
+        links[0].textContent = "About";
+        links[1].textContent = "Articles";
+        links[2].textContent = "3D Models ↗";
+      }
+    }
+    var footerLink = document.querySelector(".site-footer a");
+    if (footerLink) footerLink.textContent = "All articles";
+  }
   fetch("posts/" + slug + ".md", { cache: "no-cache" })
     .then(function (r) { if (!r.ok) throw new Error("yazı bulunamadı"); return r.text(); })
     .then(function (text) {
       var parsed = parseFrontMatter(text);
       var title = parsed.meta.title || slug;
       var date = parsed.meta.date || "";
+      var displayDate = isEnglishFmo && date ? new Intl.DateTimeFormat("en-US", { timeZone: "UTC", year: "numeric", month: "long", day: "numeric" }).format(new Date(date + "T00:00:00Z")) : formatDate(date);
       document.title = title + " — beylab";
       var description = document.querySelector('meta[name="description"]');
       if (description && parsed.meta.excerpt) description.content = parsed.meta.excerpt;
@@ -81,12 +98,12 @@ function renderPost() {
       el.classList.toggle('illustrated-article', hasPdf);
       marked.setOptions({ breaks: false, gfm: true });
       el.innerHTML =
-        '<a class="back" href="notes.html">← Tüm yazılar</a>' +
+        '<a class="back" href="notes.html">' + (isEnglishFmo ? '← All articles' : '← Tüm yazılar') + '</a>' +
         (parsed.meta.category ? '<p class="article-category">' + escapeHtml(parsed.meta.category) + '</p>' : '') +
         '<h1>' + escapeHtml(title) + '</h1>' +
-        '<div class="meta">' + (parsed.meta.author ? escapeHtml(parsed.meta.author) + ' · ' : '') + formatDate(date) +
-        (hasPdf ? ' · Web yayını' : '') + '</div>' +
-        (hasPdf ? '<a class="pdf-download" href="' + escapeHtml(pdf) + '" download>Özgün dergi yazısını indir <span>PDF · 6 sayfa ↓</span></a>' : '') +
+        '<div class="meta">' + (parsed.meta.author ? escapeHtml(parsed.meta.author) + ' · ' : '') + displayDate +
+        (hasPdf ? (isEnglishFmo ? ' · Web edition' : ' · Web yayını') : '') + '</div>' +
+        (hasPdf ? '<a class="pdf-download" href="' + escapeHtml(pdf) + '" download>' + (isEnglishFmo ? 'Download the original magazine article <span>PDF · 6 pages ↓</span>' : 'Özgün dergi yazısını indir <span>PDF · 6 sayfa ↓</span>') + '</a>' : '') +
         '<div class="content">' + marked.parse(parsed.body) + '</div>';
     })
     .catch(function (e) {
